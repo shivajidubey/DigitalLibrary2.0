@@ -1,3 +1,7 @@
 /build/
 /.gradle/
 /.idea/
+/node_modules/
+/generate-type/
+/package.json
+/package-lock.json
