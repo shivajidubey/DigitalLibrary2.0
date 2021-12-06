@@ -1,7 +1,9 @@
 package com.shiva.sb.controller;
 
-import com.shiva.sb.Service.ContentService;
 import com.shiva.sb.model.Content;
+import com.shiva.sb.model.Movie;
+import com.shiva.sb.model.TVSeries;
+import com.shiva.sb.service.ContentService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,9 +36,14 @@ public class ContentDirectory {
         return contentService.getAll();
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public void add(@RequestBody Content content) {
-        contentService.add(content);
+    @RequestMapping(value = "/addMovie", method = RequestMethod.POST)
+    public void add(@RequestBody Movie movie) {
+        contentService.addMovie(movie);
+    }
+
+    @RequestMapping(value = "/addTV", method = RequestMethod.POST)
+    public void add(@RequestBody TVSeries tvSeries) {
+        contentService.addTV(tvSeries);
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)

@@ -1,6 +1,8 @@
-package com.shiva.sb.Service;
+package com.shiva.sb.service;
 
 import com.shiva.sb.model.Content;
+import com.shiva.sb.model.Movie;
+import com.shiva.sb.model.TVSeries;
 import com.shiva.sb.repository.ContentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +17,11 @@ public class ContentService {
     @Autowired
     private ContentRepository repository;
 
-    public void add(Content content) {
+    public void addMovie(Movie content) {
+        repository.save(content);
+    }
+
+    public void addTV(TVSeries content) {
         repository.save(content);
     }
 
